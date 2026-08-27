@@ -1,0 +1,44 @@
+services:
+
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: careerpilot-postgres
+
+    environment:
+      POSTGRES_DB: ragdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ragdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+
+  careerpilot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: careerpilot-ai
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      API_KEY: ${API_KEY}
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+
+volumes:
+  postgres_data:

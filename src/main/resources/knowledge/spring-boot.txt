@@ -1,0 +1,103 @@
+SPRING BOOT
+
+Spring Boot is a Java framework used to build production-ready applications,
+especially REST APIs and backend services.
+
+DEPENDENCY INJECTION
+
+Spring manages objects called beans and injects their dependencies into other
+objects.
+
+For example, a service can receive a repository through constructor injection.
+
+IOC CONTAINER
+
+The Spring IoC container creates and manages application objects.
+
+BEAN
+
+A bean is an object managed by the Spring container.
+
+COMMON ANNOTATIONS
+
+@RestController
+@Service
+@Repository
+@Component
+@Configuration
+@Bean
+
+REST API
+
+Spring Boot can expose HTTP endpoints using controllers.
+
+Common HTTP methods include:
+
+GET
+POST
+PUT
+PATCH
+DELETE
+
+SPRING DATA JPA
+
+Spring Data JPA simplifies database access.
+
+A repository can provide operations such as:
+
+save
+findById
+findAll
+deleteById
+
+ENTITY
+
+An entity represents persistent data stored in a relational database.
+
+TRANSACTION
+
+A transaction represents a group of database operations that should be treated
+as a single unit of work.
+
+SPRING SECURITY
+
+Spring Security provides authentication and authorization.
+
+JWT authentication is commonly used for stateless REST APIs.
+
+JWT FLOW
+
+User sends credentials.
+The server authenticates the user.
+The server generates a JWT.
+The client sends the JWT with future requests.
+Spring Security validates the JWT.
+The authenticated user becomes available through the SecurityContext.
+
+SPRING BOOT CONFIGURATION
+
+Application configuration can be stored in application.properties or
+application.yml.
+
+PROFILE
+
+Spring profiles allow different configurations for different environments.
+
+For example:
+
+development
+testing
+production
+
+SPRING BOOT IN BACKEND SYSTEMS
+
+Spring Boot can be used to build:
+
+REST APIs
+Authentication services
+E-commerce applications
+Microservices
+Payment services
+Notification services
+AI applications
+RAG applications

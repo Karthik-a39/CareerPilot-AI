@@ -1,0 +1,158 @@
+SYSTEM DESIGN
+
+System design is the process of designing software systems that satisfy
+functional and non-functional requirements.
+
+FUNCTIONAL REQUIREMENTS
+
+Functional requirements describe what the system should do.
+
+Examples:
+
+User registration
+User login
+Create order
+Cancel order
+Search products
+
+NON-FUNCTIONAL REQUIREMENTS
+
+Non-functional requirements describe qualities of the system.
+
+Examples:
+
+Scalability
+Availability
+Reliability
+Performance
+Security
+Maintainability
+
+VERTICAL SCALING
+
+Vertical scaling means increasing the resources of an existing server.
+
+For example:
+
+More CPU
+More RAM
+Faster storage
+
+HORIZONTAL SCALING
+
+Horizontal scaling means adding more servers or application instances.
+
+For example:
+
+Load Balancer
+    |
+    +---- Application Instance 1
+    |
+    +---- Application Instance 2
+    |
+    +---- Application Instance 3
+
+LOAD BALANCER
+
+A load balancer distributes incoming requests across multiple application
+instances.
+
+Common strategies include:
+
+Round robin
+Least connections
+Weighted routing
+
+CACHE
+
+A cache stores frequently accessed data closer to the application so that
+future requests can be served faster.
+
+Redis is commonly used as a distributed cache.
+
+DATABASE INDEX
+
+A database index improves the performance of queries that search or sort
+using indexed columns.
+
+However, indexes require additional storage and can increase the cost of
+write operations.
+
+DATABASE SHARDING
+
+Sharding divides data across multiple database instances.
+
+For example:
+
+Users 1-1,000,000 → Shard 1
+Users 1,000,001-2,000,000 → Shard 2
+
+MESSAGE QUEUE
+
+A message queue allows services to communicate asynchronously.
+
+Kafka is commonly used for event-driven communication.
+
+MICROSERVICES
+
+Microservices architecture divides an application into independently
+deployable services.
+
+For example:
+
+User Service
+Order Service
+Payment Service
+Notification Service
+
+API GATEWAY
+
+An API Gateway acts as a single entry point for clients and can provide:
+
+Routing
+Authentication
+Rate limiting
+Load balancing
+Request filtering
+
+DATABASE CHOICE
+
+SQL databases are useful when the application requires:
+
+Strong consistency
+Relationships
+Transactions
+Structured schemas
+
+NoSQL databases can be useful when the application requires:
+
+Flexible schemas
+Large-scale distributed storage
+High write throughput
+Specific access patterns
+
+BOTTLENECK
+
+A bottleneck is a component whose limited capacity restricts the performance
+of the overall system.
+
+Common bottlenecks include:
+
+Database
+CPU
+Memory
+Network
+External APIs
+Disk I/O
+
+RELIABILITY
+
+A reliable system continues working correctly despite failures.
+
+Techniques include:
+
+Retries
+Timeouts
+Circuit breakers
+Replication
+Failover

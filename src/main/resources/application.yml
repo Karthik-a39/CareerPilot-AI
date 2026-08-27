@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/ragdb
+    username: postgres
+    password: postgres
+
+  ai:
+    google:
+      genai:
+        api-key: ${API_KEY}
+
+        chat:
+          options:
+            model: gemini-2.5-flash
+
+        embedding:
+          api-key: ${API_KEY}
+          text:
+            model: gemini-embedding-001
+            dimensions: 768
+            task-type: RETRIEVAL_DOCUMENT
+
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 768
+
+  jpa:
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080

@@ -1,0 +1,81 @@
+DOCKER
+
+Docker is a platform used to package applications and their dependencies
+into lightweight and portable containers.
+
+CONTAINER
+
+A container is an isolated runtime environment that contains an application
+and the dependencies required to run it.
+
+IMAGE
+
+A Docker image is a read-only template used to create containers.
+
+CONTAINER VS IMAGE
+
+An image is the blueprint.
+A container is a running instance of that image.
+
+DOCKERFILE
+
+A Dockerfile contains instructions used to build a Docker image.
+
+Common Dockerfile instructions include:
+
+FROM
+WORKDIR
+COPY
+RUN
+EXPOSE
+CMD
+ENTRYPOINT
+
+DOCKER NETWORKING
+
+Docker containers can communicate with each other through Docker networks.
+
+Docker Compose normally creates a network that allows services to communicate
+using their service names.
+
+For example, if a Spring Boot application and MySQL database are running
+inside the same Docker Compose network, the application can connect to MySQL
+using the MySQL service name instead of localhost.
+
+DOCKER VOLUMES
+
+Docker volumes are used to persist data outside the container's writable layer.
+
+If a container is removed, data stored only inside the container can be lost.
+Volumes allow important application data to survive container recreation.
+
+DOCKER COMPOSE
+
+Docker Compose is used to define and run multiple related containers.
+
+A typical backend system might contain:
+
+Spring Boot
+MySQL
+Redis
+Kafka
+
+Each service can be defined in docker-compose.yml.
+
+COMMON DOCKER COMMANDS
+
+docker build
+docker run
+docker ps
+docker stop
+docker start
+docker images
+docker logs
+docker exec
+docker network
+docker volume
+
+DOCKER FOR BACKEND APPLICATIONS
+
+Docker allows a Spring Boot application to be packaged into an image and
+deployed consistently across development, testing, and production environments.
